@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="5.0.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="MedewerkersForms\MedewerkersOverviewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MedewerkersForms\NewMedewerkerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Producten\NewProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Producten\ProductenOverviewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+
+</Project>
