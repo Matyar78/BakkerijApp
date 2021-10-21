@@ -34,6 +34,8 @@ namespace DataAccessLayer.DataContext
         public virtual DbSet<Klant> Klanten { get; set; }
         public virtual DbSet<Medewerker> Medewerkers { get; set; }
         public virtual DbSet<Product> Producten { get; set; }
+        public virtual DbSet<Bestelling> Bestellingen { get; set; }
+        public virtual DbSet<BestelRegel> BestelRegels { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

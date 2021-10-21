@@ -139,5 +139,58 @@ namespace DataAccessLayer
                 context.SaveChanges();
             }
         }
+
+        public IList<Bestelling> GetBestellingen()
+        {
+            using (var context = new BakkerijDataContext())
+            {
+                return context.Bestellingen.Include(nameof(Klant)).OrderByDescending(t => t.BestelDatum).ToList();
+            }
+        }
+
+        public Bestelling getBestelling(int id)
+        {
+            using (var context = new BakkerijDataContext())
+            {
+                return context.Bestellingen.Include(nameof(Klant)).Include(nameof(BestelRegel)).SingleOrDefault(t => t.Id == id);
+            }
+        }
+
+        public int InsertNewBestelling(Bestelling bestelling)
+        {
+            if (bestelling == null)
+                throw new ArgumentNullException("Bestelling mag niet leeg zijn.");
+
+            using (var context = new BakkerijDataContext())
+            {
+                context.Bestellingen.Add(bestelling);
+                context.BestelRegels.AddRange(bestelling.Producten);
+                return context.SaveChanges();
+            }
+        }
+
+        public IList<Klant> SearchKlantenByIdOrName(string input)
+        {
+            using (var context = new BakkerijDataContext())
+            {
+                return context.Klanten.Where(t => t.Id.ToString().StartsWith(input) || t.Achternaam.StartsWith(input)).ToList();
+            }
+        }
+
+        public IList<Product> SearchProductsByIdOrName(string input)
+        {
+            using (var context = new BakkerijDataContext())
+            {
+                return context.Producten.Where(t => t.Id.ToString().StartsWith(input) || t.ProductNaam.StartsWith(input)).ToList();
+            }
+        }
+
+        public IList<BestelRegel> GetBestellingProducten(int bestellingId)
+        {
+            using (var context = new BakkerijDataContext())
+            {
+                return context.BestelRegels.Include(nameof(Product)).Where(t => t.BestellingId == bestellingId).ToList();
+            }
+        }
     }
 }
