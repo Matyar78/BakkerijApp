@@ -32,7 +32,6 @@ namespace BakkerijApp
             this.cmdKlantenBeheer = new System.Windows.Forms.Button();
             this.cmdMedewerkersBeheer = new System.Windows.Forms.Button();
             this.cmdProductenBeheer = new System.Windows.Forms.Button();
-            this.cmdBestellingen = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cmdKlantenBeheer
@@ -65,22 +64,11 @@ namespace BakkerijApp
             this.cmdProductenBeheer.UseVisualStyleBackColor = true;
             this.cmdProductenBeheer.Click += new System.EventHandler(this.cmdProductenBeheer_Click);
             // 
-            // cmdBestellingen
-            // 
-            this.cmdBestellingen.Location = new System.Drawing.Point(245, 375);
-            this.cmdBestellingen.Name = "cmdBestellingen";
-            this.cmdBestellingen.Size = new System.Drawing.Size(884, 87);
-            this.cmdBestellingen.TabIndex = 3;
-            this.cmdBestellingen.Text = "Bestellingen";
-            this.cmdBestellingen.UseVisualStyleBackColor = true;
-            this.cmdBestellingen.Click += new System.EventHandler(this.cmdBestellingen_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1482, 853);
-            this.Controls.Add(this.cmdBestellingen);
             this.Controls.Add(this.cmdProductenBeheer);
             this.Controls.Add(this.cmdMedewerkersBeheer);
             this.Controls.Add(this.cmdKlantenBeheer);
@@ -95,7 +83,6 @@ namespace BakkerijApp
         private System.Windows.Forms.Button cmdKlantenBeheer;
         private System.Windows.Forms.Button cmdMedewerkersBeheer;
         private System.Windows.Forms.Button cmdProductenBeheer;
-        private System.Windows.Forms.Button cmdBestellingen;
     }
 }
 

@@ -1,5 +1,4 @@
-﻿using BakkerijApp.BestellingenForms;
-using BakkerijApp.KlantenForms;
+﻿using BakkerijApp.KlantenForms;
 using BakkerijApp.MedewerkersForms;
 using BakkerijApp.ProductenForms;
 using System;
@@ -42,14 +41,6 @@ namespace BakkerijApp
             ProductenOverviewForm pof = new ProductenOverviewForm();
             pof.Tag = this;
             pof.Show(this);
-            Hide();
-        }
-
-        private void cmdBestellingen_Click(object sender, EventArgs e)
-        {
-            BestellingOverview bof = new BestellingOverview();
-            bof.Tag = this;
-            bof.Show(this);
             Hide();
         }
     }
